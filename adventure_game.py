@@ -1,33 +1,35 @@
+# Importing necessary modules
 import time
 import random
 from datetime import datetime
 
+# Initializing variables
 weapon = "hand stunner"
 planet = random.choice(["WOO", "ATLAS"])
 aliens = random.choice(["WOOtarians", "ATLASIANS"])
 
-
+# Defining a function to determine greeting based on current time
+def greeting():
 def greeting():
     if datetime.today().hour > 18:
         return "Evening"
     else:
         return "Day"
 
-
 print(greeting())
 
-
+# Defining a function to determine greeting based on current time
 def confirmation(message):
     for n in range(len(message)):
         print(message[n])
         time.sleep(1)
 
-
+# Defining a function to print messages with a delay
 def print_pause(statement):
     print(statement)
     time.sleep(2)
 
-
+# Defining a function to print messages with a delay
 def intro():
     print_pause("!!!WELCOME---TO---SPACE---QUEST!!!")
     print_pause(f"Good {greeting()} Captain")
@@ -41,7 +43,7 @@ def intro():
     land?")
     time.sleep(1)
 
-
+# Defining a function for the command center scene where the player chooses their action
 def command_center(arsenal):
     response = input(f"Enter command: \n(1) Fight the {aliens} "
                      "\n(2) Crash land the ship\n")
@@ -59,7 +61,7 @@ def command_center(arsenal):
         print_pause("We don't have time for error!")
         command_center(arsenal)
 
-
+# Defining a function to ask the player if they want to restart the game
 def game_restart():
     print_pause("\n Do you want to go on another Space Quest?")
     restart = input("Select an input:\n(1) yes\n(2) no\n")
@@ -74,13 +76,12 @@ def game_restart():
     else:
         print_pause("Thanks for playing!")
 
-
+# Defining the main function that runs the game
 def space_quest():
     arsenal = []
     intro()
     command_center(arsenal)
     game_restart()
 
-
+# Calling the main function to start the game
 space_quest()
-
